@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    tools:context=".fragment.FindFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/studytoobar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            app:contentInsetStart="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/ic"
+                    android:drawableLeft="@drawable/fanhui"></Button>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:gravity="center"
+                    android:text="发现"
+                    android:textSize="15sp"></TextView>
+
+                <Button
+                    android:id="@+id/add_problem_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@color/TRANSPARENT"
+                    android:padding="8dp"
+                    android:text="+"
+                    android:textSize="25dp"
+                    android:visibility="invisible"></Button>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <!--滑动TabLayout-->
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/slidingTabLayout_message"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            tl:tl_indicator_color="#3E7A25"
+            tl:tl_indicator_corner_radius="1.5dp"
+            tl:tl_indicator_height="3dp"
+            tl:tl_indicator_width="30dp"
+            tl:tl_textSelectColor="@color/black"
+            tl:tl_textUnselectColor="@color/black"
+            tl:tl_textsize="15sp" />
+
+
+        <com.org.moocapp.view.FixedViewPager
+            android:id="@+id/fixedViewPager_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bg" />
+    </LinearLayout>
+
+</FrameLayout>

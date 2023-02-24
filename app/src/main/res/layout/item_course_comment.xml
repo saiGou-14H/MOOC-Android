@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@mipmap/head"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/user_comment_username"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="saiGou"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:id="@+id/user_comment_time"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="8sp"
+                android:text="2022-10-30"></TextView>
+            <TextView
+                android:id="@+id/user_comment_connent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="8sp"
+                android:text="好评好评，听了一半课了感觉很有收获！"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

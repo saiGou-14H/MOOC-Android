@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <!-- 评论人图像 -->
+        <ImageView
+            android:id="@+id/problem_comment_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/header"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY" />
+
+
+
+        <!-- 评论人昵称、评论时间、评论内容、回复 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp">
+            <!-- 评论人昵称 -->
+            <TextView
+                android:id="@+id/problem_comment_username"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:ellipsize="end"
+                android:maxEms="20"
+                android:maxLines="1"
+                android:text="名字名字名字名字名字名字名字名字"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <!-- 评论时间 -->
+            <!--            <TextView-->
+            <!--                android:id="@+id/problem_comment_time"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/problem_comment_username"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:layout_marginBottom="5dp"-->
+            <!--                android:text="2020 10-10 12:00"-->
+            <!--                android:textColor="#9f9f9f"-->
+            <!--                android:textSize="12sp" />-->
+            <!-- 评论人内容 -->
+
+            <!-- 评论时间 -->
+            <!--            <TextView-->
+            <!--                android:id="@+id/problem_comment_content"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/problem_comment_username"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:text="观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="13sp"></TextView>-->
+
+            <!--            <WebView-->
+            <!--                android:id="@+id/problem_comment_content"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/problem_comment_username"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:layout_marginTop="10dp" />-->
+            <TextView
+                android:id="@+id/problem_comment_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/problem_comment_username"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/problem_comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/problem_comment_content"
+                android:layout_alignLeft="@id/problem_comment_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="2020 10-10 12:00"
+                android:textColor="#9f9f9f"
+                android:textSize="12sp" />
+            <!--采纳-->
+            <TextView
+                android:id="@+id/btn_take_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/problem_comment_content"
+                android:layout_alignRight="@id/problem_comment_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="采纳"
+                android:textColor="#4CAF50"
+                android:textSize="12sp"></TextView>
+            <!-- 点赞 -->
+            <ImageView
+                android:id="@+id/img_comment"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_toLeftOf="@id/replyText"
+                android:src="@mipmap/dianzan" />
+
+            <TextView
+                android:id="@+id/replyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

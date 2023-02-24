@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeee"
+    android:orientation="vertical"
+    tools:context=".activaty.UserInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/messagetoobar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/userinfo_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/ic"
+                android:drawableLeft="@drawable/fanhui"></Button>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="修改资料"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#00000000"
+                android:padding="8dp"></Button>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
+
+
+            <!--            <RelativeLayout-->
+            <!--                android:id="@+id/title"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="48dp"-->
+            <!--                android:background="@color/black">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/iv_back"-->
+            <!--                    android:layout_width="40dp"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_alignParentLeft="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+
+            <!--                    android:paddingLeft="5dp"-->
+            <!--                    android:paddingTop="5dp"-->
+            <!--                    android:paddingRight="5dp"-->
+            <!--                    android:paddingBottom="5dp"-->
+            <!--                    android:scaleType="centerInside"-->
+            <!--                    android:src="@mipmap/header" />-->
+
+            <!--                <View-->
+            <!--                    android:id="@+id/view_temp"-->
+            <!--                    android:layout_width="1dp"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:layout_marginBottom="8dp"-->
+            <!--                    android:layout_toRightOf="@id/iv_back"-->
+            <!--                    android:background="#14191A" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:layout_marginLeft="10dp"-->
+            <!--                    android:layout_toRightOf="@id/view_temp"-->
+            <!--                    android:text="修改资料"-->
+            <!--                    android:textColor="#ffffff"-->
+            <!--                    android:textSize="18sp" />-->
+
+            <!--            </RelativeLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_login_form"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/re_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/userinfo_avatar"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@mipmap/header" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="头像"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <!--            <View-->
+                    <!--                android:layout_width="match_parent"-->
+                    <!--                android:layout_height="0.1dp"-->
+                    <!--                android:layout_alignParentBottom="true"-->
+                    <!--                android:layout_marginLeft="12dp"-->
+                    <!--                android:layout_marginRight="12dp"-->
+                    <!--                android:background="#dadada" />-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/re_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="用户名"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_username"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text=""
+
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_login_form"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/re_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:clickable="true">
+
+
+                    <TextView
+                        android:id="@+id/tv_temp_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="性别"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_temp_sex"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#dadada" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/re_region"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+
+                    android:background="@color/white"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/tv_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="年龄"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_age"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#dadada" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dianhua"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:clickable="true">
+
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="电话"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_phone"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#dadada" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/youxiang"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:clickable="true">
+
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="邮箱"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_email"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#dadada" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ziwei"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    android:clickable="true">
+
+
+                    <TextView
+                        android:id="@+id/tv_introduction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="个性签名"
+                        android:textColor="#353535"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/userinfo_introduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/tv_introduction"
+                        android:background="@color/TRANSPARENT"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="#dadada" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/save_userinfo_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/shape_login_form"
+                android:backgroundTint="#D39292">
+
+                <TextView
+                    android:id="@+id/baocun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+
+                    android:text="保存"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

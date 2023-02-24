@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--    </style>-->
+
+<!--    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">-->
+<!--        <item name="android:windowBackground">@drawable/photo_choose_bg</item>-->
+<!--    </style>-->
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
+    <!--自定义Dialog弹出的全屏样式,不要继承系统Dialog的样式会出现抖动的情况-->
+    <style name="dialog_full">
+        <item name="android:windowIsFloating">true</item>   <!--是否悬浮在界面上-->
+        <item name="android:windowIsTranslucent">true</item>   <!--是否半透明-->
+        <item name="android:windowNoTitle">true</item> <!--是否有标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>  <!--窗口背景色透明-->
+        <item name="android:backgroundDimEnabled">true</item>  <!--背景是否模糊显示-->
+    </style>
+
+    <!--自定义Dialog的底部弹出的动画,直接从中间弹出的不加动画-->
+    <style name="DialogBottomAnimation"  parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_exit</item>
+    </style>
+
+    <style name="MyDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item> <!--这个说明提示框是否是浮动的-->
+        <item name="android:windowIsTranslucent">true</item> <!--这个说明提示框是否是透明的-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--这个说明提示框的背景颜色是什么-->
+        <item name="android:backgroundDimEnabled">true</item><!--这个说明是否充许对话框的背景变暗。为true则充许变暗-->
+    </style>
+</resources>

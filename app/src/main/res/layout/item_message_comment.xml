@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <!-- 评论人图像 -->
+        <ImageView
+            android:id="@+id/commentItemImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/header"
+
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY" />
+        <!-- 评论人昵称、评论时间、评论内容、回复 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- 评论人昵称 -->
+            <TextView
+                android:id="@+id/comment_Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="名字"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <!-- 评论时间 -->
+            <TextView
+                android:id="@+id/commentItemTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/comment_Username"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="2020 10-10 12:00"
+                android:textColor="#9f9f9f"
+                android:textSize="8sp" />
+            <!-- 评论人内容 -->
+            <TextView
+                android:id="@+id/commentItemContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/commentItemTime"
+                android:layout_alignParentLeft="true"
+                android:text="观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点观点"
+                android:textColor="@color/black"
+                android:textSize="12sp">
+
+            </TextView>
+            <!-- 回复 -->
+            <TextView
+                android:id="@+id/replyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="回复/点赞"
+                android:textColor="#47984A"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <item android:drawable="@drawable/checkbox_unselected" android:state_checked="false" />-->
+    <!--    <item android:drawable="@drawable/checkbox_selected" android:state_checked="true" />-->
+
+    <item>
+        <layer-list>
+            <item android:width="24dp" android:height="24dp" android:drawable="@drawable/checkbox_unselected" />
+        </layer-list>
+    </item>
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:width="24dp" android:height="24dp" android:drawable="@drawable/checkbox_selected" />
+        </layer-list>
+    </item>
+
+</selector>

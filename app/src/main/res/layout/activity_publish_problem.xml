@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activaty.PublishProblemActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/messagetoobar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/publish_problem_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/ic"
+                android:drawableLeft="@drawable/fanhui"></Button>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="问题"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="#00000000"
+                android:padding="8dp"
+                android:text=""
+                android:textColor="@color/black"></Button>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="标题"
+                android:textColor="@color/black"></TextView>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/publish_problem_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_publish_problem"
+                android:hint="一句话完整的描述问题"
+                android:imeOptions="actionSend"
+                android:inputType="textImeMultiLine"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="#3E6C6C6C"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="内容"
+                android:textColor="@color/black"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_publish_problem"
+                android:orientation="vertical">
+
+                <com.widemouth.library.wmview.WMToolContainer
+                    android:id="@+id/WMToolContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.9dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#C3C0C0" />
+                <com.widemouth.library.wmview.WMEditText
+                    android:id="@+id/WMEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/publish_problem"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/place_buy_btn"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="提问"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

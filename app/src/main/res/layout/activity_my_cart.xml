@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/messagetoobar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/my_cart_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/ic"
+                android:drawableLeft="@drawable/fanhui"></Button>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:text="购物车"
+                android:textSize="15sp"></TextView>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/TRANSPARENT"
+                android:padding="8dp"></Button>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshLayout_my_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_my_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/cart_isEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_above="@id/cart_empty"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/cart_empty" />
+
+            <TextView
+                android:id="@+id/cart_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="5dp"
+                android:text="购物车空空如也"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_empty_cart_tobuy"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/buy_success"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:background="#C69143"-->
+            <!--                android:paddingLeft="25dp"-->
+            <!--                android:paddingTop="5dp"-->
+            <!--                android:paddingRight="25dp"-->
+            <!--                android:paddingBottom="5dp"-->
+            <!--                android:text="立即学习"-->
+            <!--                android:textColor="#EAE9E0"-->
+            <!--                android:textSize="15sp" />-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/tv_empty_cart_tobuy"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:background="#C69143"-->
+            <!--                android:paddingLeft="25dp"-->
+            <!--                android:paddingTop="5dp"-->
+            <!--                android:paddingRight="25dp"-->
+            <!--                android:paddingBottom="5dp"-->
+            <!--                android:text="查看订单"-->
+            <!--                android:textColor="#EAE9E0"-->
+            <!--                android:textSize="15sp" />-->
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <!--底部-->
+    <!--底部-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!--            <CheckBox-->-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center_vertical"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:layout_marginRight="4dp"-->
+            <!--                android:button="@drawable/checkbox_selector"-->
+            <!--                android:checkMark="?android:attr/listChoiceIndicatorMultiple"-->
+            <!--                android:gravity="center"-->
+            <!--                android:minHeight="64dp"-->
+            <!--                android:paddingLeft="10dp"-->
+            <!--                android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--                />-->
+            <CheckBox
+                android:id="@+id/all_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:checked="false"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="合计:"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/my_money" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/placeDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@drawable/place_delete_btn"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="删除"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/placeBuyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@drawable/place_buy_btn"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="结算(3)"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+        <!--        <Button-->
+        <!--            android:id="@+id/btn_delete"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="35dp"-->
+        <!--            android:background="@drawable/words"-->
+        <!--            android:text="删除"-->
+        <!--            android:textColor="#303235"-->
+        <!--            android:textSize="15sp"/>-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_go_to_pay"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:background="#59C55D"-->
+        <!--            android:clickable="true"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="结算(3)"-->
+        <!--            android:textColor="#FAFAFA" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeee"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_problem_detail"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/problem_img_header"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@mipmap/header" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/problem_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="问题发布者"
+                    android:textColor="#242424"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/problem_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="2022-10-10 12:00"
+                    android:textColor="#9f9f9f"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/problem_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxEms="60"
+                android:maxLines="2"
+                android:paddingRight="0dp"
+                android:text="如何解决问题？"
+                android:textColor="#222222"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/problem_content"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginVertical="5dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:ellipsize="end"-->
+            <!--                android:maxEms="60"-->
+            <!--                android:maxLines="2"-->
+            <!--                android:paddingRight="0dp"-->
+            <!--                android:text="如何解决问题？"-->
+            <!--                android:textColor="#758C8A8A"-->
+            <!--                android:textSize="10sp" />-->
+        </LinearLayout>
+
+
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="187dp"-->
+        <!--            android:layout_marginTop="8dp">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/img_cover"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:src="@mipmap/default_bg" />-->
+
+        <!--        </RelativeLayout>-->
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/player_container"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="187dp"-->
+        <!--            android:layout_marginVertical="15dp"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:background="@android:color/black"-->
+        <!--            android:orientation="vertical">-->
+        <!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_problem_best_comment"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="最佳回答"
+                android:textColor="@color/black"
+                android:textSize="10dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="用户："
+                    android:textColor="#283FBD"
+                    android:textSize="10dp"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxEms="60"
+                    android:maxLines="2"
+                    android:paddingRight="0dp"
+                    android:text="内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="25dp">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:layout_centerVertical="true"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/img_comment"-->
+            <!--                    android:layout_width="19dp"-->
+            <!--                    android:layout_height="19dp"-->
+            <!--                    android:src="@mipmap/icon_share_problem" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/comment"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginLeft="3dp"-->
+            <!--                    android:text="分享"-->
+            <!--                    android:textColor="#161616"-->
+            <!--                    android:textSize="14sp" />-->
+            <!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_collect"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/comment" />
+
+
+                <TextView
+                    android:id="@+id/problem_comment_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="0"
+                    android:textColor="#161616"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/problem_item_img_like"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@mipmap/dianzan" />
+
+                <TextView
+                    android:id="@+id/problem_like_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="0"
+                    android:textColor="#161616"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="#f5f5f4" />
+
+</LinearLayout>

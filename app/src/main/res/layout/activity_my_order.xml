@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activaty.MyOrderActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/coursetoobar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/my_order_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/ic"
+                android:drawableLeft="@drawable/fanhui"></Button>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_marginVertical="0dp"
+                android:layout_weight="8"
+                android:background="@drawable/shape_bbg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/my_order_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/ic"
+                    android:hint="搜索"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:textSize="10sp"></com.google.android.material.textfield.TextInputEditText>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/coursefindbtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/ic"
+                android:drawableBottom="@drawable/sousu"
+                android:padding="8dp"
+                tools:ignore="SpeakableTextPresentCheck"></Button>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/refreshLayout_my_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <!--内容-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_my_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CCEEEEEE"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
