@@ -80,29 +80,40 @@
                     android:id="@+id/coursetype"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:dropDownVerticalOffset="20dp"
+                    android:dropDownHorizontalOffset="20dp"></Spinner>
+                <Spinner
+                    android:id="@+id/coursetype2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:dropDownVerticalOffset="20dp"
+                    android:dropDownHorizontalOffset="20dp"></Spinner>
                 <Spinner
                     android:id="@+id/coursetime"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"></Spinner>
-                <Spinner
-                    android:id="@+id/coursegrade"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"></Spinner>
+                    android:layout_weight="1"
+                    android:dropDownVerticalOffset="20dp"
+                    android:dropDownHorizontalOffset="20dp"></Spinner>
             </LinearLayout>
         </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <com.org.moocapp.view.MyRecyclerView
-                android:id="@+id/select_course_view"
+            android:layout_height="wrap_content">
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/select_refresh"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/grey"/>
-        </ScrollView>
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_course_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey"/>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
+        </ScrollView>
     </LinearLayout>
 
 

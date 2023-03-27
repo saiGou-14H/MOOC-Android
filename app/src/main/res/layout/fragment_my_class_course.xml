@@ -5,11 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".fragment.MyClassCourseFragment">
 
-    <com.org.moocapp.view.MyRecyclerView
-        android:id="@+id/myclasscourse"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Spinner
+            android:id="@+id/class_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="20dp"
+            android:dropDownHorizontalOffset="20dp"
+            ></Spinner>
+        <com.org.moocapp.view.MyRecyclerView
+            android:id="@+id/myclasscourse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </com.org.moocapp.view.MyRecyclerView>
+        </com.org.moocapp.view.MyRecyclerView>
+    </LinearLayout>
 
 </FrameLayout>

@@ -2,9 +2,6 @@ package com.org.moocapp.activaty;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,7 +11,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.DocumentsContract;
@@ -29,6 +25,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+
 import com.google.gson.Gson;
 import com.org.moocapp.R;
 import com.org.moocapp.api.Api;
@@ -36,7 +35,6 @@ import com.org.moocapp.api.ApiConfig;
 import com.org.moocapp.api.TtitCallback;
 import com.org.moocapp.entity.find.UserEntity;
 import com.org.moocapp.entity.find.UserListResponse;
-import com.org.moocapp.util.Base64ImageUtils;
 import com.org.moocapp.util.CircleTransform;
 import com.org.moocapp.util.PermissionUtils;
 import com.squareup.picasso.Picasso;
@@ -45,8 +43,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
-
-import jp.wasabeef.richeditor.RichEditor;
 
 public class UserInfoActivity extends BaseActivity {
 
@@ -99,8 +95,6 @@ public class UserInfoActivity extends BaseActivity {
         save_userinfo_btn = findViewById(R.id.save_userinfo_btn);
         save_userinfo_btn.setOnClickListener(myCartClickListener);
         userinfo_avatar.setOnClickListener(myCartClickListener);
-
-
     }
 
     @Override
@@ -125,20 +119,11 @@ public class UserInfoActivity extends BaseActivity {
         String email = String.valueOf(userinfo_email.getText());
         String phone = String.valueOf(userinfo_phone.getText());
         String introduction = String.valueOf(userinfo_introduction.getText());
-//        params.put("id", "");
         params.put("username", username);
-//        params.put("password", "");
-//        params.put("role", "");
         params.put("age", age);
         params.put("email", email);
         params.put("phone", phone);
-//        params.put("studyTime", "");
-//        params.put("integral", "");
-//        params.put("position", "");
-//        params.put("headPic", "");
-//        params.put("facePic", "");
         params.put("introduction", introduction);
-//        params.put("sign", "");
         Api.config(ApiConfig.UPDATE_USERINFO, params).postRequest(this, new TtitCallback() {
             @Override
             public void onSuccess(final String res) {
@@ -189,11 +174,14 @@ public class UserInfoActivity extends BaseActivity {
                                             .transform(new CircleTransform())
                                             .into(userinfo_avatar);
                                 }
+
+
                             }
                         });
                     } else {
                     }
                 }
+
             }
 
             @Override
@@ -203,7 +191,7 @@ public class UserInfoActivity extends BaseActivity {
     }
 
     /**
-     * 获取个人信息
+     * 修改头像信息
      */
     private void uploadHead(String base46Str) {
         HashMap<String, Object> params = new HashMap<>();
@@ -211,7 +199,6 @@ public class UserInfoActivity extends BaseActivity {
         Api.config(ApiConfig.UPDATE_HEAD, params).postRequest(this, new TtitCallback() {
             @Override
             public void onSuccess(final String res) {
-                System.out.println(res);
             }
 
             @Override
@@ -233,7 +220,10 @@ public class UserInfoActivity extends BaseActivity {
                 case R.id.save_userinfo_btn:        //保存个人信息按钮
                     updateUserinfo();
                     showToast("保存成功");
+
                     break;
+
+
                 case R.id.userinfo_back:        //退出页面按钮
                     finish();
                     break;
@@ -414,20 +404,50 @@ public class UserInfoActivity extends BaseActivity {
 //            tvPermissionShow.setText("请您选择一张权限图标");
 //            tvPermissionShow.setTextColor(getResources().getColor(R.color.red)); //字体变红色
         } else {
-            //不为空，通过图片路径把图片转为Bitmap后，使用图片控件显示出来
+            //不为空，将图片路径转为Bitmap后，使用图片控件显示出来
             userinfo_avatar.setImageBitmap(BitmapFactory.decodeFile(logoPath));
-            System.out.println("当前图片名：" + logoPath.substring(logoPath.lastIndexOf("/") + 1));
-
-//            System.out.println("BitmapFactory"+BitmapFactory.decodeFile(logoPath));
-//            System.out.println(bitmapToBase64(BitmapFactory.decodeFile(logoPath)));
-//            uploadHead(Base64ImageUtils.bitmapToBase64(BitmapFactory.decodeFile(logoPath)));
-
-
+            //修改头像
+//            uploadHead(bitmapToBase64(BitmapFactory.decodeFile(logoPath)));
 //            userinfo_avatar.setImageURI(Uri.fromFile(new File(logoPath)));
 //            tvPermissionShow.setText("当前图片名：" + logoPath.substring(logoPath.lastIndexOf("/") + 1));
 //            tvPermissionShow.setTextColor(getResources().getColor(R.color.blue));
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    /**
+     * bitmap转为base64
+     *
+     * @param bitmap
+     * @return
+     */
+    public static String bitmapToBase64(Bitmap bitmap) {
+        String result = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            if (bitmap != null) {
+                baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+
+                baos.flush();
+                baos.close();
+
+                byte[] bitmapBytes = baos.toByteArray();
+                result = Base64.encodeToString(bitmapBytes, Base64.DEFAULT);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (baos != null) {
+                    baos.flush();
+                    baos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 
 

@@ -47,7 +47,7 @@
         </androidx.appcompat.widget.Toolbar>
         <ScrollView
             android:id="@+id/coursedetialscrollview"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="8"
             android:overScrollMode="never"
@@ -59,6 +59,7 @@
             android:layout_weight="8"
             android:orientation="vertical">
             <ImageView
+                android:id="@+id/detailcourse_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@mipmap/lunbo1"></ImageView>
@@ -87,7 +88,7 @@
                             android:gravity="center_vertical"
                             android:background="@color/MLV"></TextView>
                         <TextView
-                            android:id="@+id/detailcoursename"
+                            android:id="@+id/detailcourse_name"
                             android:layout_width="0dp"
                             android:layout_weight="10"
                             android:layout_height="match_parent"
@@ -104,7 +105,7 @@
                         android:background="@color/white"
                         android:padding="5dp">
                         <TextView
-                            android:id="@+id/dz"
+                            android:id="@+id/detailcourse_dz"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:drawableLeft="@drawable/dianzan"
@@ -112,16 +113,16 @@
                             android:gravity="center"
                             android:layout_marginHorizontal="10dp"></TextView>
                         <TextView
-                            android:id="@+id/sc"
+                            android:id="@+id/detailcourse_sc"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:drawableLeft="@drawable/shoucang"
                             android:text="100"
                             android:gravity="center"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_toRightOf="@id/dz"></TextView>
+                            android:layout_toRightOf="@id/detailcourse_dz"></TextView>
                         <TextView
-                            android:id="@+id/pay"
+                            android:id="@+id/detailcourse_share"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:drawableLeft="@drawable/weixin"
@@ -158,18 +159,19 @@
             android:layout_height="0dp"
             android:layout_weight="0.8"
             android:padding="5dp"
-            android:background="#FFF9F9"
+            android:background="@color/TRANSPARENT"
             app:tabIndicatorColor="@null">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/detailcourse_dz_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/shoucang"
-                    android:text="收藏"
+                    android:drawableTop="@drawable/dianzan"
+                    android:text="点赞"
                     android:paddingTop="10dp"
                     android:gravity="center"
                     android:textSize="10sp"
@@ -178,11 +180,12 @@
 
                 </Button>
                 <Button
+                    android:id="@+id/detailcourse_sc_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/zixunjilu"
-                    android:text="咨询"
+                    android:drawableTop="@drawable/shoucang"
+                    android:text="收藏"
                     android:paddingTop="10dp"
                     android:gravity="center"
                     android:textSize="10sp"
@@ -191,6 +194,7 @@
                     android:textColor="@color/black">
                 </Button>
                 <Button
+                    android:id="@+id/detailcourse_share_btn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -209,7 +213,7 @@
                     android:layout_weight="3"
                     android:orientation="horizontal">
                     <Button
-                        android:id="@+id/price"
+                        android:id="@+id/detialcourselpay"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
@@ -221,7 +225,7 @@
                         android:textSize="11sp">
                     </Button>
                     <Button
-                        android:id="@+id/addCar"
+                        android:id="@+id/detialcourseaddcar"
                         android:layout_width="0dp"
                         android:background="@drawable/shape_bg_right"
                         android:layout_height="match_parent"

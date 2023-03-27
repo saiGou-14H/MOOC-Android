@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"><TextView
+            android:id="@+id/integralhistorytime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="2022-11-12 23:58:52"></TextView></LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/integralhistoryorigin"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="签到"
+            android:layout_height="match_parent"></TextView></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"><TextView
+            android:id="@+id/integralhistorytype"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="+1"
+            android:layout_height="match_parent"></TextView></LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

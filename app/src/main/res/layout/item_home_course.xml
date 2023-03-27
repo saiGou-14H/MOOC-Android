@@ -8,16 +8,18 @@
     <ImageView
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:scaleType="fitXY"/>
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="10sp"/>
+        android:textColor="@color/black"
+        android:textSize="11sp"/>
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="10sp"/>
+        android:textSize="10sp"
+        android:textColor="@color/black"/>
 </LinearLayout>

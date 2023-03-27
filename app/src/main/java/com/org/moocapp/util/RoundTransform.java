@@ -19,9 +19,11 @@ import com.squareup.picasso.Transformation;
 public class RoundTransform implements Transformation {
 
     private Context mContext;
+    private int dpVal;
 
-    public RoundTransform(Context context) {
+    public RoundTransform(Context context,int mdpVal) {
         mContext = context;
+        dpVal = mdpVal;
     }
 
     @Override
@@ -29,7 +31,7 @@ public class RoundTransform implements Transformation {
 
         int widthLight = source.getWidth();
         int heightLight = source.getHeight();
-        int radius = DensityUtil.dp2px(mContext, 40); // 圆角半径
+        int radius = DensityUtil.dp2px(mContext,dpVal); // 圆角半径
 
         Bitmap output = Bitmap.createBitmap(source.getWidth(), source.getHeight(), Bitmap.Config.ARGB_8888);
 

@@ -14,11 +14,14 @@
         <!-- Customize your theme here. -->
         <item name="contentInsetStart">0dp</item>
     </style>
+
     <style name="Theme.Moocapp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.Moocapp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.Moocapp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">

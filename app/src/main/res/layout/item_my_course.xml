@@ -36,14 +36,16 @@
                     android:id="@+id/mycoursename"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
                     android:text="课程名字"
                     android:layout_margin="5dp"></TextView>
                 <TextView
                     android:id="@+id/mycourseteachername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
                     android:text="授课老师：xx"
                     android:layout_margin="5dp"></TextView>
                 <LinearLayout
@@ -51,31 +53,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center">
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/mycourseTime"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-                        <ProgressBar
-                            android:id="@+id/mycourseprogressbar"
-                            android:layout_width="0dp"
-                            android:layout_weight="7"
-                            android:layout_height="match_parent"
-                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                            android:progress="60"
-                            android:progressTint="@color/MLV">
-                        </ProgressBar>
-                        <TextView
-                            android:id="@+id/mycourseprogress"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:textSize="8sp"
-                            android:text="60%"
-                            android:textStyle="bold"
-                            android:gravity="center"></TextView>
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:drawableLeft="@drawable/bofang"
+                        android:gravity="center_vertical"
+                        android:text="0课时"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
             <Button

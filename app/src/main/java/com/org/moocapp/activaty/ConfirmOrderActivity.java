@@ -1,16 +1,15 @@
 package com.org.moocapp.activaty;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.org.moocapp.R;
@@ -21,9 +20,7 @@ import com.org.moocapp.api.ApiConfig;
 import com.org.moocapp.api.TtitCallback;
 import com.org.moocapp.entity.find.MyCourseEntity;
 import com.org.moocapp.entity.find.MyCourseListResponse;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
-import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -38,7 +35,6 @@ public class ConfirmOrderActivity extends BaseActivity {
     private TextView placeMoney;
 
     private RecyclerView recyclerView;
-    private RefreshLayout refreshLayout;
     private LinearLayoutManager linearLayoutManager;
     private ConfirmOederAdapter confirmOederAdapter;
     /**
@@ -46,10 +42,8 @@ public class ConfirmOrderActivity extends BaseActivity {
      */
     private int pageNum = 1;
     private List<MyCourseEntity> datas = new ArrayList<>();
-    private Button button;
 
-    public int nums;
-    public Double prices;
+
     public double total;//    总计
     ArrayList<String> couList;//课程id
 
@@ -67,11 +61,6 @@ public class ConfirmOrderActivity extends BaseActivity {
         }
     };
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_confirm_order);
-//    }
 
     @Override
     protected int initLayout() {
@@ -104,41 +93,10 @@ public class ConfirmOrderActivity extends BaseActivity {
         confirmOederAdapter.setOnItemClickListener(new MessageAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Serializable obj) {
-                Log.e("position", "String.valueOf(position)");
-//                MyCartEntity myCartEntity = (MyCartEntity) obj;
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("myCartEntity",myCartEntity);
-//                navigateTo(MessageDetailActivity.class, bundle);
             }
         });
         recyclerView.setAdapter(confirmOederAdapter);
-//        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-//            @Override
-//            public void onRefresh(RefreshLayout refreshlayout) {
-//                pageNum = 1;
-//                refreshLayout.finishRefresh(true);
-////                getMyCartList(true);
-//            }
-//        });
-//        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-//            @Override
-//            public void onLoadMore(RefreshLayout refreshlayout) {
-//                pageNum++;
-//                refreshLayout.finishLoadMore(true);
-////                getMyCartList(false);
-//            }
-//        });
 
-//        for (int i = 0; i < 8; i++) {
-//            MyCartEntity myCartEntity = new MyCartEntity();
-//            myCartEntity.setName("课程名称-" + i);
-//            myCartEntity.setIntegral(i);
-//            myCartEntity.setFlag(true);
-//            myCartEntity.setPicture("https://profile-avatar.csdnimg.cn/eabd69cac9064aa89f4d55b70acaf132_lgz0921.jpg");
-//            datas.add(myCartEntity);
-//        }
-//        confirmOederAdapter.setDatas(datas);
-//        confirmOederAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -216,7 +174,6 @@ public class ConfirmOrderActivity extends BaseActivity {
         }
         params.put("order", o);
         params.put("list", l);
-        System.out.println(new JSONObject(params).toString());
         Api.config(ApiConfig.ORDER_ADD, params).postRequest(this, new TtitCallback() {
             @Override
             public void onSuccess(final String res) {
@@ -246,7 +203,7 @@ public class ConfirmOrderActivity extends BaseActivity {
                     if (confirm_check_box.isSelected()) {
                         addOrder(total, couList);
                     } else {
-                        showToast("请阅读并同意《XX协议》");
+                        showToast("请阅读并同意《综合协议》");
                     }
 
                     break;

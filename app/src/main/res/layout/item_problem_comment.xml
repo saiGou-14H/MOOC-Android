@@ -24,7 +24,6 @@
             android:scaleType="fitXY" />
 
 
-
         <!-- 评论人昵称、评论时间、评论内容、回复 -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -70,24 +69,25 @@
             <!--                android:textColor="@color/black"-->
             <!--                android:textSize="13sp"></TextView>-->
 
-            <!--            <WebView-->
-            <!--                android:id="@+id/problem_comment_content"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_below="@id/problem_comment_username"-->
-            <!--                android:layout_alignParentLeft="true"-->
-            <!--                android:layout_marginTop="10dp" />-->
-            <TextView
+            <WebView
                 android:id="@+id/problem_comment_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/problem_comment_username"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+                tools:ignore="WebViewLayout" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/problem_comment_content"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/problem_comment_username"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:layout_marginEnd="10dp"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="13sp" />-->
 
             <TextView
                 android:id="@+id/problem_comment_time"

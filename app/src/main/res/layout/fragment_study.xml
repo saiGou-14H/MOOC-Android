@@ -19,15 +19,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/studyreturnbtn"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/ic"
-                    android:drawableLeft="@drawable/fanhui"
-                    >
-                </Button>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="8"
@@ -65,47 +56,48 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:background="@mipmap/upimage">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="今日学习时长"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="40dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="30"
-                        android:textColor="@color/white"
-                        android:textSize="40sp"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="80dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="分钟"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginTop="100dp"/>
+                    android:id="@+id/stydy_qd">
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="今日学习时长"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:layout_marginTop="40dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="30"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="40sp"-->
+<!--                        android:layout_marginLeft="40dp"-->
+<!--                        android:layout_marginTop="80dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="分钟"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:layout_marginLeft="100dp"-->
+<!--                        android:layout_marginTop="100dp"/>-->
                     <Button
+                        android:id="@+id/gosign_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="签到"
+                        android:text="去签到"
                         android:textSize="20dp"
                         android:background="@drawable/shape_bg"
                         android:textColor="@color/white"
-                        android:backgroundTint="#FFEB3B"
+                        android:backgroundTint="@color/blue"
                         android:topRightRadius="100dp"
                         android:layout_marginTop="140dp"
-                        android:layout_marginLeft="50dp"/>
+                        android:layout_marginLeft="160dp"/>
                 </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="65dp"
                     android:layout_marginVertical="10dp"
                     android:background="@color/white"
                     android:padding="5dp"
@@ -118,7 +110,7 @@
                             android:layout_weight="100"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
-                            android:text="上次学习"
+                            android:text="总学习时长"
                             android:gravity="center"
                             android:textSize="14sp"/>
                         <View
@@ -131,7 +123,7 @@
                             android:layout_weight="100"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
-                            android:text="本月已学"
+                            android:text="今日学习时长"
                             android:gravity="center"
                             android:textSize="14sp"/>
                     </LinearLayout>
@@ -142,6 +134,27 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:background="#EEEEEE" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:id="@+id/studytime"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:text="0"
+                            android:gravity="center"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/todaystudytime"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:text="0"
+                            android:gravity="center"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -163,7 +176,7 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/studyviewpager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1000dp">
                 </androidx.viewpager2.widget.ViewPager2>
             </LinearLayout>
 

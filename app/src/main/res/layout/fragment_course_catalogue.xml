@@ -4,11 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.CourseCatalogueFragment">
-    <com.org.moocapp.view.MyRecyclerView
-    android:id="@+id/catalogueRecyclerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dp">
-    </com.org.moocapp.view.MyRecyclerView>
 
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <com.org.moocapp.view.MyRecyclerView
+          android:id="@+id/catalogueRecyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:padding="5dp">
+      </com.org.moocapp.view.MyRecyclerView>
+   </ScrollView>
 </FrameLayout>

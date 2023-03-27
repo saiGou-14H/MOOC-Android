@@ -1,9 +1,5 @@
 package com.org.moocapp.activaty;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +9,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.org.moocapp.R;
@@ -130,6 +130,16 @@ public class MyCartActivity extends BaseActivity {
         });
         getMyCartList(true);
 
+//        for (int i = 0; i < 8; i++) {
+//            MyCartEntity myCartEntity = new MyCartEntity();
+//            myCartEntity.setName("课程名称-" + i);
+//            myCartEntity.setIntegral(i);
+//            myCartEntity.setFlag(false);
+//            myCartEntity.setPicture("https://profile-avatar.csdnimg.cn/eabd69cac9064aa89f4d55b70acaf132_lgz0921.jpg");
+//            datas.add(myCartEntity);
+//        }
+//        myCartAdapter.setDatas(datas);
+//        myCartAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -183,7 +193,6 @@ public class MyCartActivity extends BaseActivity {
                                 mHandler.sendEmptyMessage(0);
                             } else {
                                 if (isRefresh) {
-//                            showToastSync("购物车空空如也～");
                                     refreshLayout_my_cart.setVisibility(View.GONE);
                                     cart_isEmpty.setVisibility(View.VISIBLE);
                                 } else {
@@ -248,13 +257,15 @@ public class MyCartActivity extends BaseActivity {
             Log.e("isChecked", "true");
             for (int i = 0; i < datas.size(); i++) {
                 MyCartEntity myCartEntity = datas.get(i);
-                myCartEntity.setFlag(true);//datas.get(i).setFlag(true);
+                myCartEntity.setFlag(true);
+                //datas.get(i).setFlag(true);
             }
         } else {
             Log.e("isChecked", "false");
             for (int i = 0; i < datas.size(); i++) {
                 MyCartEntity myCartEntity = datas.get(i);
-                myCartEntity.setFlag(false);// datas.get(i).setFlag(false);
+                myCartEntity.setFlag(false);
+                // datas.get(i).setFlag(false);
             }
         }
         myCartAdapter.notifyDataSetChanged();

@@ -1,9 +1,5 @@
 package com.org.moocapp.activaty;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -11,6 +7,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
@@ -92,10 +92,6 @@ public class MyOrderActivity extends BaseActivity {
         myOrderAdapter.setOnItemClickListener(new MyOrderAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Serializable obj) {
-//                MyCartEntity myCartEntity = (MyCartEntity) obj;
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("myCartEntity",myCartEntity);
-//                navigateTo(MessageDetailActivity.class, bundle);
             }
         });
         recyclerView.setAdapter(myOrderAdapter);

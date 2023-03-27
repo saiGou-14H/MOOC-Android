@@ -10,18 +10,27 @@ import android.widget.TextView;
 
 
 import com.org.moocapp.R;
+import com.org.moocapp.entity.CourseEntity;
 import com.org.moocapp.entity_mysql.MCourse;
 import com.org.moocapp.util.RoundTransform;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CourseGridAdapter extends BaseAdapter {
     private final Context mContext;
-    private final ArrayList<MCourse> courseInfos;
+    private  List<CourseEntity> courseInfos;
 
-    public CourseGridAdapter(Context mContext, ArrayList<MCourse> courseInfos) {
+    public CourseGridAdapter(Context mContext, List<CourseEntity> courseInfos) {
         this.mContext = mContext;
+        this.courseInfos = courseInfos;
+    }
+    public CourseGridAdapter(Context mContext) {
+        this.mContext = mContext;
+    }
+
+    public void setDatas(List<CourseEntity> courseInfos){
         this.courseInfos = courseInfos;
     }
 
@@ -57,8 +66,8 @@ public class CourseGridAdapter extends BaseAdapter {
         }
 
         // 给控制设置好数据
-        MCourse courseInfo = courseInfos.get(position);
-        Picasso.with(mContext).load(courseInfo.getImage()).transform(new RoundTransform(mContext)).into(holder.iv_image);
+        CourseEntity courseInfo = courseInfos.get(position);
+        Picasso.with(mContext).load(courseInfo.getPicture()).transform(new RoundTransform(mContext,10)).into(holder.iv_image);
         holder.tv_name.setText(courseInfo.getName());
         holder.tv_desc.setText(courseInfo.getIntroduction());
 

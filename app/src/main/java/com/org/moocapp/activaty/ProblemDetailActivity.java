@@ -8,17 +8,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,29 +25,27 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.org.moocapp.R;
 import com.org.moocapp.adapter.ProblemCommentAdapter;
 import com.org.moocapp.api.Api;
 import com.org.moocapp.api.ApiConfig;
 import com.org.moocapp.api.TtitCallback;
 import com.org.moocapp.dialog.WMEditTextDialog;
+import com.org.moocapp.entity.find.IsMyQuestionResponse;
 import com.org.moocapp.entity.find.ProblemCommentEntity;
 import com.org.moocapp.entity.find.ProblemCommentListResponse;
 import com.org.moocapp.entity.find.ProblemEntity;
 import com.org.moocapp.entity.find.ProblemResponse;
 import com.org.moocapp.util.CircleTransform;
 import com.org.moocapp.util.RichTextUtil;
-import com.org.moocapp.view.NoScrollListView;
+import com.org.moocapp.view.BottomScrollView;
 import com.squareup.picasso.Picasso;
 import com.widemouth.library.toolitem.WMToolImage;
 
 import java.io.Serializable;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ProblemDetailActivity extends BaseActivity {
     private WMEditTextDialog wmEditTextDialog;//对话框
@@ -60,16 +56,12 @@ public class ProblemDetailActivity extends BaseActivity {
     private TextView problem_title;
     private ImageView problem_author_header;
     private TextView problem_author;
-    private TextView problem_detail_content;
     private TextView problem_detail_comment_num;
     private TextView problem_detail_like_num;
     private ImageView problem_img_like;
 
-    private TextView publish_problem_comment;//发表按钮
-    private EditText problem_comment_Edit;//发表内容
-    private TextInputEditText problem_textInputEditText;
-
-    private NoScrollListView noScrollListView;//评论列表
+    private BottomScrollView my_scrollView;
+    private ListView noScrollListView;//评论列表
     private ProblemCommentAdapter problemCommentAdapter;
 
 
@@ -77,8 +69,13 @@ public class ProblemDetailActivity extends BaseActivity {
     private String comment = "";        //记录对话框中的内容
     private ProblemEntity problemEntity;
     private Long questionId;
-    private Double isMy;
-
+    private int isMy;
+    float mLastY;
+    boolean isSvToBottom = false;
+    /**
+     * listview竖向滑动的阈值
+     */
+    private static final int THRESHOLD_Y_LIST_VIEW = 20;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -110,33 +107,58 @@ public class ProblemDetailActivity extends BaseActivity {
         problem_title = findViewById(R.id.problem_title);
         problem_author_header = findViewById(R.id.problem_author_header);
         problem_author = findViewById(R.id.problem_author);
-//        problem_detail_content = findViewById(R.id.problem_detail_content);
         problem_detail_comment_num = findViewById(R.id.problem_detail_comment_num);
         problem_detail_like_num = findViewById(R.id.problem_detail_like_num);
-//        publish_problem_comment = findViewById(R.id.publish_problem_comment);
         problem_img_like = findViewById(R.id.problem_img_like);
 
-//        problem_comment_Edit = findViewById(R.id.problem_comment_Edit);
-//        problem_textInputEditText = findViewById(R.id.problem_comment_Edit);
 
+        my_scrollView = findViewById(R.id.my_scrollView);
         noScrollListView = findViewById(R.id.problemCommentList);
 
         MyClickListener myClickListener = new MyClickListener();
         problemDetail_back.setOnClickListener(myClickListener);
-//        publish_problem_comment.setOnClickListener(myClickListener);
-//        problem_textInputEditText.setOnEditorActionListener(new MyOnEditor());
         publish_problem_comment_btn_dialog.setOnClickListener(myClickListener);
-
 
         problemCommentAdapter = new ProblemCommentAdapter(this);
         noScrollListView.setAdapter(problemCommentAdapter);
 
-//        Utility.setListViewHeightBasedOnChildren(noScrollListView);
+        my_scrollView.setScrollToBottomListener(new BottomScrollView.OnScrollToBottomListener() {
+            @Override
+            public void onScrollToBottom() {
+                isSvToBottom = true;
+            }
 
+            @Override
+            public void onNotScrollToBottom() {
+                isSvToBottom = false;
+            }
+        });
 
-
+        noScrollListView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    mLastY = event.getY();
+                }
+                if (action == MotionEvent.ACTION_MOVE) {
+                    int top = noScrollListView.getChildAt(0).getTop();
+                    float nowY = event.getY();
+                    if (!isSvToBottom) {
+                        // 允许scrollview拦截点击事件, scrollView滑动
+                        noScrollListView.requestDisallowInterceptTouchEvent(false);
+                    } else if (top == 0 && nowY - mLastY > THRESHOLD_Y_LIST_VIEW) {
+                        // 允许scrollview拦截点击事件, scrollView滑动
+                        noScrollListView.requestDisallowInterceptTouchEvent(false);
+                    } else {
+                        // 不允许scrollview拦截点击事件， listView滑动
+                        noScrollListView.requestDisallowInterceptTouchEvent(true);
+                    }
+                }
+                return false;
+            }
+        });
     }
-
 
     @Override
     protected void initData() {
@@ -170,7 +192,7 @@ public class ProblemDetailActivity extends BaseActivity {
         super.onResume();
         getQuestionCommentList(questionId);
         getProblem(questionId);
-        //写一个接口判断是否是自己的问题
+        //接口判断是否是自己的问题
         isMyQuestion(questionId);
     }
 
@@ -260,12 +282,17 @@ public class ProblemDetailActivity extends BaseActivity {
             @Override
             public void onSuccess(String res) {
                 //将json字符串转换为map集合
-                Type type = new TypeToken<Map<String, Object>>() {
-                }.getType();
-                Gson gson = new Gson();
-                Map<String, Object> response = gson.fromJson(res, type);
-                if (response != null && (Double) response.get("code") == 200.0) {
-                    isMy = (Double) response.get("data");
+//                Type type = new TypeToken<Map<String, Object>>() {
+//                }.getType();
+//                Gson gson = new Gson();
+//                Map<String, Object> response = gson.fromJson(res, type);
+//                if (response != null && (Double) response.get("code") == 200.0) {
+//                    isMy = (Double) response.get("data");
+//                    mHandler.sendEmptyMessage(1);
+//                }
+                IsMyQuestionResponse response = new Gson().fromJson(res, IsMyQuestionResponse.class);
+                if (response != null && response.getCode() == 200) {
+                    isMy = response.getData();
                     mHandler.sendEmptyMessage(1);
                 }
             }
@@ -329,8 +356,7 @@ public class ProblemDetailActivity extends BaseActivity {
         Api.config(ApiConfig.PROBLEM_Comment_TAKE, params).getRequest(mContext, new TtitCallback() {
             @Override
             public void onSuccess(String res) {
-                Log.e("TAG", res);
-                getQuestionCommentList(problemEntity.getId());
+                getQuestionCommentList(questionId);
             }
 
             @Override
@@ -372,20 +398,21 @@ public class ProblemDetailActivity extends BaseActivity {
     /**
      * 发表评论
      */
-    private void publishProblemComment(Long questionId) {
+    private void publishProblemComment(Long questionId1) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put("questionId", questionId);
+        params.put("questionId", questionId1);
         params.put("content", comment);
         Api.config(ApiConfig.PROBLEM_Comment_ADD, params).postRequest(this, new TtitCallback() {
             @Override
             public void onSuccess(String res) {
+                getProblem(questionId);
+                getQuestionCommentList(questionId);
                 showToastSync("发表成功");
-                getQuestionCommentList(problemEntity.getId());
             }
 
             @Override
             public void onFailure(Exception e) {
-
+                showToastSync("发表失败");
             }
         });
 
@@ -396,12 +423,11 @@ public class ProblemDetailActivity extends BaseActivity {
      */
     private boolean isEditEmply() {
 //        comment = problem_textInputEditText.getText().toString().trim();
-        comment = RichTextUtil.richText(mContext, getBody(wmEditTextDialog.getEditText().getHtml()));
+        comment = RichTextUtil.richText(mContext, getBody(wmEditTextDialog.getEditText().getHtml())).toString().trim();
         if (comment.equals("")) {
             showToast("评论不能为空");
             return false;
         }
-//        problem_textInputEditText.setText("");
         wmEditTextDialog.getEditText().setText("");
         return true;
     }
@@ -443,19 +469,14 @@ public class ProblemDetailActivity extends BaseActivity {
                     } else {
                         problem_img_like.setVisibility(View.INVISIBLE);
                     }
-//                case R.id.publish_problem_comment:    //发表评论按钮
-//                    if (isEditEmply()) {        //判断用户是否输入内容
-//                        publishProblemComment(problemEntity.getId());
-//                        showToast("发表成功");
-//                    }
-//                    break;
-                case R.id.publish_problem_comment_btn_dialog:
+
+                case R.id.publish_problem_comment_btn_dialog://发表回答按钮
                     wmEditTextDialog.setOnDialogClickListener(new WMEditTextDialog.OnDialogClickListener() {
                         @Override
                         public void onOKClick() {
                             wmEditTextDialog.dismiss();
                             if (isEditEmply()) {        //判断用户是否输入内容
-                                publishProblemComment(problemEntity.getId());
+                                publishProblemComment(questionId);
                             }
                         }
 

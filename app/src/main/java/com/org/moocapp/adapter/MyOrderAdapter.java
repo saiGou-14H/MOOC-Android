@@ -61,7 +61,6 @@ public class MyOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         vh.my_order_course_name.setText(String.valueOf(myOrderCourseEntity.getName()));
         Picasso.with(mContext)
                 .load(myOrderCourseEntity.getPicture())
-                .transform(new CircleTransform())
                 .into(vh.my_order_img_course_pic);
         vh.my_order_price.setText(String.valueOf(myOrderCourseEntity.getIntegral()));
         vh.my_order_time.setText(String.valueOf(myOrderCourseEntity.getCreateTime()));

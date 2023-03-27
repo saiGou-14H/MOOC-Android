@@ -67,9 +67,6 @@ public class MessageCommentAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-//        InputStream is = mContext.getResources().openRawResource(messageCommentEntity.getId());
-//        Bitmap bitmap = BitmapFactory.decodeStream(is);
-//        holder.commentItemImg.setImageBitmap(bitmap);
 
         Picasso.with(mContext)
                 .load(messageCommentEntity.getHeadPic())
@@ -87,7 +84,5 @@ public class MessageCommentAdapter extends BaseAdapter {
         public TextView commentUsername;            //评论人昵称
         public TextView commentItemTime;            //评论时间
         public TextView commentItemContent;            //评论内容
-//        public TextView replyText;                    //回复
-//        public NoScrollListView replyList;            //评论回复列表
     }
 }

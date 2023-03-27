@@ -5,26 +5,22 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.org.moocapp.R;
-
 import com.org.moocapp.activaty.ProblemDetailActivity;
 import com.org.moocapp.adapter.MyQuestionAdapter;
 import com.org.moocapp.api.Api;
 import com.org.moocapp.api.ApiConfig;
 import com.org.moocapp.api.TtitCallback;
-
 import com.org.moocapp.entity.find.ProblemEntity;
 import com.org.moocapp.entity.find.ProblemListResponse;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-
 
 import java.io.Serializable;
 import java.util.ArrayList;

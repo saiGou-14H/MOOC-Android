@@ -12,4 +12,9 @@
     <color name="toobar">#FFAAD09D</color>
     <color name="grey">#F1F1F1</color>
     <color name="skin_text_white">#ffffff</color>
+    <color name="org">#FF9800</color>
+    <color name="blue">#00BCD4</color>
+    <color name="green">@color/teal_200</color>
+    <color name="no_sign">#818181</color>
+    <color name="yellow">#FFE391</color>
 </resources>

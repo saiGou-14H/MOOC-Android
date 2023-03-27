@@ -169,7 +169,7 @@ public class ProblemFragment extends BaseFragment {
         Log.e("请求", "getProblemList");
         HashMap<String, Object> params = new HashMap<>();
         params.put("pageNum", pageNum);
-        params.put("pageSize", ApiConfig.PAGE_SIZE);
+        params.put("pageSize", 10);
 //        params.put("categoryId", categoryId);
 
 

@@ -3,8 +3,6 @@
     <!-- 边 -->
     <item>
         <shape android:shape="rectangle">
-            <corners></corners>
-            <gradient></gradient>
             <padding
                 android:bottom="1.5dp"
                 android:left="1.5dp"

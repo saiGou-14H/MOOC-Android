@@ -63,7 +63,6 @@ public class ConfirmOederAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         vh.confirm_order_course_name.setText(String.valueOf(myCourseEntity.getName()));
         Picasso.with(mContext)
                 .load(myCourseEntity.getPicture())
-                .transform(new CircleTransform())
                 .into(vh.confirm_order_img_course_pic);
         vh.confirm_order_price.setText(String.valueOf(myCourseEntity.getIntegral()));
     }

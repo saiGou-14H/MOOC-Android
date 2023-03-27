@@ -18,6 +18,13 @@
         android:theme="@style/Theme.Moocapp"
         tools:targetApi="31">
         <activity
+            android:name=".activaty.IntegralHistoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activaty.PublishProblemActivity"
             android:exported="false">
             <meta-data
@@ -67,6 +74,45 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activaty.CourseVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activaty.SignActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sign"
+            android:theme="@style/Theme.Moocapp.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activaty.PracticeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activaty.MyCourseDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activaty.SearchActivity"
             android:exported="false">
             <meta-data
@@ -102,7 +148,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activaty.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan|stateVisible"> <!-- 解决tab随着输入法弹出而上移 -->
             <intent-filter>

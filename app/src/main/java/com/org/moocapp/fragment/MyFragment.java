@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.org.moocapp.R;
+import com.org.moocapp.activaty.IntegralHistoryActivity;
 import com.org.moocapp.activaty.MyCartActivity;
 import com.org.moocapp.activaty.MyMessageActivity;
 import com.org.moocapp.activaty.MyOrderActivity;
@@ -99,7 +100,6 @@ public class MyFragment extends BaseFragment {
         Api.config(ApiConfig.GET_USERINFO, params).getRequest(getContext(), new TtitCallback() {
             @Override
             public void onSuccess(final String res) {
-                System.out.println(res);
                 UserListResponse response = new Gson().fromJson(res, UserListResponse.class);
                 if (response != null && response.getCode() == 200) {
                     user = response.getData();
@@ -142,7 +142,7 @@ public class MyFragment extends BaseFragment {
                     navigateTo(UserInfoActivity.class, null);
                     break;
                 case R.id.my_integralDetails://查看积分流水
-//                    navigateTo(.class, null);
+                    navigateTo(IntegralHistoryActivity.class, null);
                     break;
                 case R.id.my_cart:
                     navigateTo(MyCartActivity.class, null);

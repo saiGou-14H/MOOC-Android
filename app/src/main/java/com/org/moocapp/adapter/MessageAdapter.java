@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.org.moocapp.R;
 import com.org.moocapp.entity.find.MessageEntity;
 import com.org.moocapp.util.CircleTransform;
+import com.org.moocapp.util.StringUtils;
 import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
@@ -65,7 +66,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         MessageEntity messageEntity = datas.get(position);
         vh.messageEntity = messageEntity;
         vh.tvTitle.setText(messageEntity.getTitle());
-        vh.tvContent.setText(messageEntity.getContent());
+//        vh.tvContent.setText(messageEntity.getContent());
 
         /**
          * CircleTransform类
@@ -74,17 +75,18 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 .load(messageEntity.getHeadPic())
                 .transform(new CircleTransform())
                 .into(vh.imgHeader);
+        if (StringUtils.isEmpty(messageEntity.getResourceUrl())){
+
+        }else {
+            Picasso.with(mContext)
+                    .load(messageEntity.getResourceUrl())
+                    .into(vh.message_img);
+        }
+
         vh.tvAuthor.setText(messageEntity.getAuthor());
-        vh.tvMessage_like.setText(String.valueOf(messageEntity.getMessageLike()+"点赞"));
-        vh.tvComment.setText(String.valueOf(messageEntity.getCommentNum()+"评论"));
+        vh.tvMessage_like.setText(String.valueOf(messageEntity.getMessageLike() + "点赞"));
+        vh.tvComment.setText(String.valueOf(messageEntity.getCommentNum() + "评论"));
         vh.tvMessage_time.setText(String.valueOf(messageEntity.getDate()));
-
-
-//        Picasso.with(mContext)
-//                .load(videoEntity.getCoverurl())
-//                .into(vh.mThumb);
-//        vh.mPosition = position;
-
     }
 
     @Override
@@ -102,6 +104,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private TextView tvContent;
         private TextView tvAuthor;
         private ImageView imgHeader;
+        private ImageView message_img;
 
         private TextView tvMessage_like;
         private TextView tvComment;
@@ -112,8 +115,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public ViewHolder(@NonNull View view) {
             super(view);
             tvTitle = view.findViewById(R.id.message_title);
-            tvContent = view.findViewById(R.id.message_content);
+//            tvContent = view.findViewById(R.id.message_content);
             tvAuthor = view.findViewById(R.id.message_author);
+            message_img = view.findViewById(R.id.message_img);
 
             imgHeader = view.findViewById(R.id.img_header);
             tvMessage_like = view.findViewById(R.id.message_like);

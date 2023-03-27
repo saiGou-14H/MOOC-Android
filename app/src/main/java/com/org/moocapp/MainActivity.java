@@ -83,7 +83,6 @@ public class MainActivity extends BaseActivity {
                 tab.setIcon(icon.get(position));
             }
         }).attach();
-
     }
 
 

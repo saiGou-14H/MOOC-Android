@@ -35,15 +35,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="课程名字"
-                android:textSize="15sp"></TextView>
+                android:textColor="@color/black"
+                android:textSize="12sp"></TextView>
 
             <TextView
                 android:id="@+id/select_course_teachername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="授课老师：xx"
-                android:textSize="12sp"></TextView>
+                android:text="授课老师："
+                android:textColor="@color/black"
+                android:textSize="10sp"></TextView>
 
             <TextView
                 android:id="@+id/courseTime"
@@ -52,7 +54,6 @@
                 android:layout_margin="5dp"
                 android:drawableLeft="@drawable/bofang"
                 android:gravity="center_vertical"
-                android:paddingTop="30dp"
                 android:text="10课时"
                 android:textColor="@color/black"
                 android:textSize="10sp" />

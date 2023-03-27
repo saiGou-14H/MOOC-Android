@@ -98,7 +98,6 @@ public class ProblemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             tvProblem_author = view.findViewById(R.id.problem_author);
             tvProblem_time = view.findViewById(R.id.problem_time);
             tvProblem_title = view.findViewById(R.id.problem_title);
-//            tvProblem_content = view.findViewById(R.id.problem_content);
             tvProblem_comment_num = view.findViewById(R.id.problem_comment_num);
             tvProblem_like_num = view.findViewById(R.id.problem_like_num);
 

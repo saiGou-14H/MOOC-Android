@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.org.moocapp.R;
-
 import com.org.moocapp.api.Api;
 import com.org.moocapp.api.ApiConfig;
 import com.org.moocapp.api.TtitCallback;
@@ -76,7 +75,6 @@ public class MyCartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         vh.tvMy_cart_course_name.setText(String.valueOf(myCartEntity.getName()));
         Picasso.with(mContext)
                 .load(myCartEntity.getPicture())
-                .transform(new CircleTransform())
                 .into(vh.tvMy_cart_img_course_pic);
         vh.tvMy_cart_price.setText(String.valueOf(myCartEntity.getIntegral()));
         vh.flag.setChecked(myCartEntity.isFlag());

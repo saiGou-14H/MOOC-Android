@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,9 +59,6 @@ public class MyAnswerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         ViewHolder vh = (ViewHolder) holder;
         MyMQuestionCommentEntity myMQuestionCommentEntity = datas.get(position);
         vh.myMQuestionCommentEntity = myMQuestionCommentEntity;
-//        vh.tv_my_answer_title.setText("回答的标题");
-//        vh.tv_my_answer_content.setText("回答的内容");
-//        vh.tv_my_answer_time.setText("回答的时间");
         vh.tv_my_answer_title.setText(String.valueOf(myMQuestionCommentEntity.getTitle()));
         vh.tv_my_answer_content.setText(String.valueOf(myMQuestionCommentEntity.getContent()));
         vh.tv_my_answer_time.setText(String.valueOf(myMQuestionCommentEntity.getDate()));

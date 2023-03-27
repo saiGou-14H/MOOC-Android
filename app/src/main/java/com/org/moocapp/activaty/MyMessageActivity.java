@@ -25,11 +25,6 @@ public class MyMessageActivity extends BaseActivity {
     private SlidingTabLayout slidingTabLayout;
     private Button my_message_back;
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_my_message);
-//    }
 
     @Override
     protected int initLayout() {

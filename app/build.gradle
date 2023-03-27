@@ -12,8 +12,8 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -30,7 +30,6 @@ android {
         viewBinding true
     }
 }
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -51,10 +50,18 @@ dependencies {
     //分页控件
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3'
     // picasso
-    //加载图片
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    //列表选择器
-    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    //时间选择器
+    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+    //视频播放
+    implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.7'
+    //可选，包含StandardVideoController的实现
+    implementation 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.7'
+    // 可选，如需要缓存或者抖音预加载功能请引入此库
+    implementation 'xyz.doikki.android.dkplayer:videocache:3.3.7'
+
+    compileOnly "org.projectlombok:lombok:1.16.18"
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
     //数据级联选择器
     implementation 'com.github.gamekonglee:regionSelector:2.0'
     //
@@ -64,8 +71,5 @@ dependencies {
     implementation 'com.zzhoujay.richtext:richtext:3.0.7'  //RichText资源库
     implementation 'com.github.widemouth-dz:wmrichtexteditor:2.0.4'
     //
-    implementation 'org.jsoup:jsoup:1.12.1'
-
-
 
 }

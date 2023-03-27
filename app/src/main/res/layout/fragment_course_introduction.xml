@@ -29,7 +29,7 @@
             <TextView
                 android:id="@+id/coursedetailintroduction"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="简介内容"
                 android:textSize="15sp"
@@ -41,7 +41,7 @@
                 android:background="@color/grey"></View>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="职业发展"
                 android:textStyle="bold"
@@ -50,7 +50,7 @@
             </TextView>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:text="发展。。。。。。。。。"
                 android:textSize="15sp"

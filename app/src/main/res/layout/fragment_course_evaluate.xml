@@ -5,65 +5,69 @@
     android:layout_height="match_parent"
     tools:context=".fragment.CourseEvaluateFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="综合评价"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:paddingHorizontal="20dp"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:drawableTop="@drawable/aixin"
-                    android:background="@color/TRANSPARENT"/>
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:drawableTop="@drawable/aixin"
-                    android:background="@color/TRANSPARENT"/>
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:drawableTop="@drawable/aixin"
-                    android:background="@color/TRANSPARENT"/>
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:drawableTop="@drawable/aixin"
-                    android:background="@color/TRANSPARENT"/>
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:drawableTop="@drawable/aixin"
-                    android:background="@color/TRANSPARENT"/>
+                android:layout_height="80dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="综合评价"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/aixin"
+                        android:background="@color/TRANSPARENT"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/aixin"
+                        android:background="@color/TRANSPARENT"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/aixin"
+                        android:background="@color/TRANSPARENT"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/aixin"
+                        android:background="@color/TRANSPARENT"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/aixin"
+                        android:background="@color/TRANSPARENT"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
             </LinearLayout>
-            <View
+            <com.org.moocapp.view.MyRecyclerView
+                android:id="@+id/comment_view"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey"/>
+                android:layout_height="wrap_content"
+                android:padding="5dp"/>
         </LinearLayout>
-        <com.org.moocapp.view.MyRecyclerView
-            android:id="@+id/comment_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"/>
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

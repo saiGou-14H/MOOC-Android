@@ -33,7 +33,7 @@ public class ImageViewAdapter extends PagerAdapter {
                     ViewGroup.LayoutParams.WRAP_CONTENT
             ));
             view.setScaleType(FIT_XY);
-            Picasso.with(mContext).load(info.getImage()).transform(new RoundTransform(mContext)).into(view);
+            Picasso.with(mContext).load(info.getImage()).transform(new RoundTransform(mContext,40)).into(view);
 
 
             mViewList.add(view);

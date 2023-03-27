@@ -77,26 +77,6 @@ public class PublishProblemActivity extends BaseActivity {
     @Override
     protected void initData() {
         initWMTextEditor();
-//        textEditor.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                System.out.println("onTouch");
-//                switch (motionEvent.getAction()) {
-//                    case MotionEvent.ACTION_MOVE:
-//                        System.out.println("ACTION_MOVE");
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        System.out.println("ACTION_UP");
-//                        break;
-//                    case MotionEvent.ACTION_DOWN:
-//                        System.out.println("ACTION_DOWN");
-//                        break;
-//                    default:
-//                        break;
-//                }
-//                return true;
-//            }
-//        });
         closeSoftKeyboard(new View(this));
     }
 
